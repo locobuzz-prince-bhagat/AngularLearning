@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="left-container">
+    <img src="Images/image1.png" alt="left-background-image" class="left-background-image" />
+  </div>
+  <div class="right-container">
+    <div class="upper-Section">
+      <img src="Images/logo.png" alt="locobuzz-logo" class="logo">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="LoginSubmit()">
+      <div class="Lower-Section">
+        <div class="inner-Section">
+          <div class="Welcome-message">
+            <h1 style="font-weight: 400;">Welcome to Locobuzz!</h1>
+          </div>
+          <div class="login-text">
+            <p style="color: gray;">Please enter login details below</p>
+          </div>
+          <div class="input">
+            <div class="email-phone">
+              <mat-form-field appearance="outline" style="width: 350px">
+                <mat-label>Email or Username</mat-label>
+                <input formControlName="emailOrUsername" matInput placeholder="Enter Your Email/Username" />
+                <mat-error *ngIf="loginForm.get('emailOrUsername')?.hasError('required')">
+                  Email Or Username is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="password">
+              <mat-form-field appearance="outline" style="width: 350px">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter Your Password" formControlName="password" />
+                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="signup-login-row">
+            <a href="#" class="signup-link">Sign Up</a>
+            <button mat-flat-button color="primary" class="login-button">Login</button>
+          </div>
+          <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

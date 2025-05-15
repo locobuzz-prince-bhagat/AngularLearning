@@ -1,0 +1,37 @@
+<div class="dashboard">
+  <div class="header">
+    <div class="left-item">
+      <button id="togglebutton" class="material-symbols-outlined" (click)="toggleNavbar()">menu</button>
+      <div class="keep-logo">
+        <img src="https://play-lh.googleusercontent.com/9bJoeaPbGTB8Tz_h4N-p-6ReRd8vSS-frZb2tmJulaGIoTKElKj3zpmcFJvnS96ANZP5" alt="keep logo">
+        <span style="font-size:22px;color: grey;">Keep</span>
+      </div>
+    </div>
+    <div class="search-bar">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="Search">
+      <span class="material-symbols-outlined">close</span>
+    </div>
+    <div class="right-item">
+      <div class="tools">
+        <span class="material-symbols-outlined">refresh</span>
+        <span class="material-symbols-outlined">splitscreen</span>
+        <span class="material-symbols-outlined">settings</span>
+      </div>
+      <div class="usercontrols">
+        <span class="material-symbols-outlined">apps</span>
+        <div class="signin">
+          <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="signin">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes Section BELOW HEADER -->
+  <div class="notes-container">
+    <div class="note-card" *ngFor="let note of dummyNotes">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+    </div>
+  </div>
+</div>
