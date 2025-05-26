@@ -10,5 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-    userName = '';
+  userName: string = 'prince-bhagat';
+  phoneNumber: string = '8769944633';
+  emailId: string = 'prince.bhagat@locobuzz.com';
 }
