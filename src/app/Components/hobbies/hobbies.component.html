@@ -1,0 +1,5 @@
+<h2>Hobbies</h2>
+<button (click)="showList=!showList">{{showList?'Hide':'Show'}} List</button>
+<ul *ngIf="showList">
+    <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+</ul>
