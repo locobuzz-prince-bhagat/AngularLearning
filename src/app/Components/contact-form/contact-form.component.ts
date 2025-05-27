@@ -16,10 +16,11 @@ export class ContactFormComponent {
     message: ''
   };
 
-  name = 'john doe';
+   // 🛠️ Rename 'name' to something else like 'personName'
+  personName = 'john doe';
   today = new Date();
-  price = 1000;
-  discount = 0.25;
+  price = 499.99;
+  discount = 0.15;
 
   submitForm() {
     console.log(this.contact);
