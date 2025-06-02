@@ -29,16 +29,14 @@ export class LoginComponent implements OnInit{
     });
   }
    LoginSubmit(): void {
-  console.log('LoginSubmit clicked');  // ✅ Add this
-  if (this.loginForm.valid) {
-    const formValues = this.loginForm.value;
-    console.log('Form Submitted:', formValues);
-  } else {
-    console.log('Form is invalid');
-    this.loginForm.markAllAsTouched();
+    if (this.loginForm.valid) {
+      const formValues = this.loginForm.value;
+      console.log('Form Submitted:', formValues);
+      // Add your login logic here (e.g., call an authentication service)
+    } else {
+      console.log('Form is invalid');
+    }
   }
-}
-
 
   
 

@@ -1,0 +1,16 @@
+<li>
+  <input
+    type="checkbox"
+    [checked]="task.done"
+    (change)="toggleDone.emit()"
+    id="task-{{ id }}"
+  />
+  <label
+    [for]="'task-' + id"
+    [class.done]="task.done"
+    style="cursor: pointer"
+  >
+    {{ task.text }}
+  </label>
+  <button (click)="delete.emit()">Delete</button>
+</li>

@@ -1,4 +1,4 @@
-<h2>Todo List</h2>
+<!-- <h2>Todo List</h2>
 
 <form [formGroup]="todoForm" (ngSubmit)="addTask()">
   <input
@@ -30,4 +30,18 @@
     </label>
     <button (click)="deleteTask(i)">Delete</button>
   </li>
-</ul>
+</ul> 
+ -->
+
+
+  <h2>Todo List (Parent Child Input/Output Decorator)</h2>
+    <app-todo-input (taskAdded)="addTask($event)"></app-todo-input>
+    <ul>
+      <app-todo-item
+        *ngFor="let task of tasks; index as i" [task]="task" [id]="i" (delete)="deleteTask(i)"(toggleDone)="toggleDone(i)"></app-todo-item>
+    </ul>
+
+
+    <h2>Todo List (Service Communication)</h2>
+    <app-task-sender></app-task-sender>
+    <app-task-receiver></app-task-receiver>
