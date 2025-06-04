@@ -339,20 +339,8 @@
   <a routerLink="/contact" routerLinkActive="active">Contact</a> |
   <a routerLink="/contact-form" routerLinkActive="active">Contact Me</a> |
   <a routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a> |
-  <a routerLink="/todo-list" routerLinkActive="active">ToDo List</a>|
-  <a routerLink="/posts" routerLinkActive="active">Posts</a>
+  <a routerLink="/todo-list" routerLinkActive="active">TODO List</a>
 </nav>
-<img [src]="image" alt="image">
-<div>
-  <button (click)="incrementValue()"></button>
-</div>
-<p>Click {{count}} times</p>
-<input #nameRef type="text" [(ngModel)]="userName" placeholder="Enter name" />
- <div>
-  <h4>Welcome {{userName}}</h4>
- </div>
-<p>Split Two Way Binding</p>
- <input type="text" [ngModel]="userName" (ngModelChange)="greetPrince($event)">
- <p>Hi {{userName}}</p>
+
 <hr />
 <router-outlet />

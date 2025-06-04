@@ -37,8 +37,8 @@
 //   }
 // }
 
-import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TodoInputComponent } from '../todo-input/todo-input.component';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
@@ -47,7 +47,7 @@ import { TaskSenderComponent } from '../task-sender/task-sender.component';
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, TodoItemComponent, TodoInputComponent, TaskReceiverComponent, TaskSenderComponent],
+  imports: [ReactiveFormsModule, CommonModule,TodoItemComponent,TodoInputComponent,TaskReceiverComponent,TaskSenderComponent],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
@@ -65,7 +65,5 @@ export class TodoListComponent {
   toggleDone(index: number) {
     this.tasks[index].done = !this.tasks[index].done;
   }
-
-
 }
 
