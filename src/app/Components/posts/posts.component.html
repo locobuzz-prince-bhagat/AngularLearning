@@ -1,0 +1,40 @@
+<div class="post-container">
+  <h2>📄 Manage Posts</h2>
+
+  <!-- 🔍 Search Bar -->
+  <div class="search-bar">
+    <input [(ngModel)]="searchTerm" placeholder="🔎 Search by ID or Title..." />
+    <button (click)="searchPost()">Search</button>
+  </div>
+
+  <!-- 🎯 Search Result -->
+  <div *ngIf="selectedPost && !isEditing" class="post-details animate">
+    <h3>🎯 Search Result</h3>
+    <p><strong>ID:</strong> {{ selectedPost.id }}</p>
+    <p><strong>Title:</strong> <span [innerHTML]="highlightMatch(selectedPost.title)"></span></p>
+    <p><strong>Body:</strong> {{ selectedPost.body }}</p>
+    <button (click)="selectedPost = null" class="clear-btn">❌ Clear</button>
+  </div>
+
+  <p *ngIf="notFound" class="not-found">⚠️ No post found with the given input.</p>
+
+  <!-- 📝 Form -->
+  <form (ngSubmit)="submitForm()" class="post-form">
+    <input [(ngModel)]="postForm.title" name="title" placeholder="✏️ Title" required />
+    <textarea [(ngModel)]="postForm.body" name="body" placeholder="📄 Body" required></textarea>
+    <button type="submit">{{ isEditing ? '✅ Update Post' : '➕ Add Post' }}</button>
+    <button type="button" (click)="resetForm()" class="cancel-btn" *ngIf="isEditing">❌ Cancel</button>
+  </form>
+
+  <!-- 📋 Post List -->
+  <ul class="post-list">
+    <li *ngFor="let post of posts">
+      <span>{{ post.title }}</span>
+      <div class="actions">
+        <button (click)="editPost(post)">✏️</button>
+        <button (click)="deletePost(post.id)">🗑️</button>
+        <button (click)="viewPost(post.id)">👁️</button>
+      </div>
+    </li>
+  </ul>
+</div>

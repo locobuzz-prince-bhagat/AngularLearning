@@ -9,6 +9,8 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
 import { ReactiveFormComponent } from './Components/reactive-form/reactive-form.component';
 import { TodoListComponent } from './Components/todo-list/todo-list.component';
+import { PostService } from './Services/Todo/post.service';
+import { PostsComponent } from './Components/posts/posts.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +57,9 @@ export const routes: Routes = [
     {
       path:'todo-list',
       component:TodoListComponent
+    },
+    {
+      path:'posts',
+      component:PostsComponent
     }
 ];

@@ -41,7 +41,6 @@
         *ngFor="let task of tasks; index as i" [task]="task" [id]="i" (delete)="deleteTask(i)"(toggleDone)="toggleDone(i)"></app-todo-item>
     </ul>
 
-
     <h2>Todo List (Service Communication)</h2>
     <app-task-sender></app-task-sender>
     <app-task-receiver></app-task-receiver>
